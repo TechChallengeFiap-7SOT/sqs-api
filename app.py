@@ -14,7 +14,7 @@ sqs = boto3.client(
 )
 queue_url = os.getenv("SQS_QUEUE_URL")
 
-@app.post("/send-messages/")
+@app.post("/send-messages")
 async def send_message(message: dict):
     try:
         body_message = message.get('message', {})
